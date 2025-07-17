@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Alnafi Center</title>
+  <link rel="stylesheet" type="text/css"  href="../static/style.css" />
+
+
+<style>
+table
+{ margin: 10px 0 30px 0;}
+
+table tr th, table tr td
+{ background: #3B3B3B;
+  color: #FFF;
+  padding: 7px 4px;
+  text-align: left;}
+
+table tr td
+{ background: #E5E5DB;
+  color: #47433F;
+  border-top: 1px solid #FFF;}
+
+  nav {
+    display: block;
+    text-align: center;
+  }
+  nav ul {
+    margin: 0;
+    padding:0;
+    list-style: none;
+  }
+  .nav a {
+    display:block;
+    background: black;
+    color:#fff;
+    text-decoration: none;
+    padding: .8em 1.8em;
+    text-transform: uppercase;
+    font-size: 90%;letter-spacing: 2px;
+    text-shadow: 0 -1px 0 #000;
+    position: relative;
+  }
+  .nav{
+    vertical-align: top;
+    display: inline-block;
+    box-shadow: 1px -1px -1px 1px #000, -1px 1px -1px 1px black, 0 0 6px 3px black;
+    border-radius:6px;
+  }
+  .nav li{position: relative;}
+  .nav > li {
+    float:left;
+    border-bottom: 4px #aaa solid;
+    margin-right: 1px;
+  }
+  .nav > li > a {
+    margin-bottom:1px;
+    box-shadow:inset 0 2em .33em -.5em #555;
+  }
+  .nav > li:hover , .nav > li:hover >a{  border-bottom-color:#E4EC04;}
+  .nav li:hover > a { color:#E4EC04; }
+  .nav > li:first-child  { border-radius: 4px 0 0 4px;}
+  .nav > li:first-child>a{border-radius: 4px 0 0 0;}
+  .nav > li:last-child  {
+    border-radius: 0 0 4px 0;
+    margin-right: 0;
+  }
+  .nav > li:last-child >a{border-radius: 0 4px 0 0; }
+  .nav li li a { margin-top:1px}
+
+
+
+    .nav li a:first-child:nth-last-child(2):before {
+     content:"";
+     position: absolute;
+     height:0;
+     width: 0;
+     border: 5px solid transparent;
+     top: 50% ;
+     right:5px;
+   }
+
+
+
+
+
+   /* submenu positioning*/
+.nav ul {
+  position: absolute;
+  white-space: nowrap;
+  border-bottom: 5px solid  #E4EC04;
+  z-index: 1;
+  left: -99999em;
+}
+.nav > li:hover > ul {
+  left: auto;
+  padding-top: 5px  ;
+  min-width: 100%;
+}
+.nav > li li ul {  border-left:1px solid #fff;}
+
+
+.nav > li li:hover > ul {
+ /* margin-left: 1px */
+  left: 100%;
+  top: -1px;
+}
+/* arrow hover styling */
+.nav > li > a:first-child:nth-last-child(2):before {
+  border-top-color: #aaa;
+}
+.nav > li:hover > a:first-child:nth-last-child(2):before {
+  border: 5px solid transparent;
+  border-bottom-color: #E4EC04;
+  margin-top:-5px
+}
+.nav li li > a:first-child:nth-last-child(2):before {
+  border-left-color: #aaa;
+  margin-top: -5px
+}
+.nav li li:hover > a:first-child:nth-last-child(2):before {
+  border: 5px solid transparent;
+  border-right-color: #E4EC04;
+  right: 10px;
+}
+.form_settings select
+{ padding: 5px;
+  width: 311px;
+  font: 100% arial;
+  border: 1px solid #E5E5DB;
+  background: #FFF;
+  color: #47433F;}
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><img src="../static/alnafi.jpg" width="250" height="70" ></h1>
+
+        </div>
+      </div>
+
+
+
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+
+	<div style="position: relative; right:-155px;" class="form_settings">
+
+	<h1 style = "font-family:georgia,garamond,serif;font-size:25px;"><b>Create Al Nafi Account</b></h1>
+    <form id="reused_form" method="post" action="{{url_for('create_account')}}" >
+
+                                       <p><span>Username</span>
+                                         <input type="text" name="username" required class="form-control" placeholder="Enter username"> </p>
+
+                                       <p><span>Password</span>
+                                         <input type="password" name="password" required class="form-control" placeholder="Your password"> </p>
+
+                                       <p><span>Email</span>
+                                         <input type="email" name="email" required class="form-control" placeholder="Your Email ID"> </p>
+
+                                  <p style="padding-top: 15px"><span>&nbsp;</span><input class="submit" type="submit" name="submitue=" value="Register"> </p>
+
+                                </form>
+      <a href="{{url_for('login_page')}}"> Already Have an Account </a>
+      <div class ="msg"> {{ msg }} </div>
+								</div><br><br><br><br><br><br>
+
+	  </div>
+
+    </div>
+
+
+</body>
+</html>
