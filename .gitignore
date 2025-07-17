@@ -1,0 +1,21 @@
+# Python-related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+
+# Flask and IDE related
+instance/
+.env
+*.db
+*.sqlite3
+*.bak
+*.log
+
+# PyCharm
+.idea/
+*.iml
+
+# MacOS and others
+.DS_Store
